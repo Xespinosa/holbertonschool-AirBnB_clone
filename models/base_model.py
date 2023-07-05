@@ -3,7 +3,8 @@ import uuid
 import datetime
 from models.__init__ import storage
 
-"""Module for the AirBnB Clone
+"""
+Module for the AirBnB Clone
 """
 
 
