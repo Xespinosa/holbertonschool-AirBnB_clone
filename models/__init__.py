@@ -1,4 +1,4 @@
-"""Module importing
+"""Module importing from file storage
 """
 from models.engine.storage import FileStorage
 

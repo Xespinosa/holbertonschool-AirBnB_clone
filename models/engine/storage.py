@@ -47,7 +47,7 @@ class FileStorage(BaseModel):
             json.dump(object_dict, f)
 
     def reload(self):
-        """unload json file dictionary to object dictionary
+        """unload json file dictionary to object dictionary completely
         """
         if self.__file_path:
             with open(self.__file_path, "r", encoding='utf-8') as f:

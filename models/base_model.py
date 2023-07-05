@@ -39,7 +39,7 @@ class BaseModel:
         return f"[{name}] ({idcpy}) <{dct}>"
 
     def save(self):
-        """Method to save when the instance has been updated
+        """Method to save when the instance has been updated and save to json
         """
         storage.save()
         updated_at = datetime.datetime.now
