@@ -9,11 +9,8 @@ Returns:
 """
 
 
-class FileStorage(BaseModel):
+class FileStorage():
     """Class handling all file storage management
-
-    Args:
-        BaseModel (Class): Parent class
 
     Returns:
         dictionary : dictionary of objects
@@ -49,9 +46,11 @@ class FileStorage(BaseModel):
     def reload(self):
         """unload json file dictionary to object dictionary completely
         """
-        if self.__file_path:
+        try:
             with open(self.__file_path, "r", encoding='utf-8') as f:
                 json_data = json.load(f)
             self.__objects = {}
             for key, value in json_data.items():
                 self.__objects[key] = BaseModel(**value)
+        except Exception:
+            pass

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import uuid
 from datetime import datetime
+import models
 
 """Module for the AirBnB Clone
 """
@@ -24,6 +25,9 @@ class BaseModel:
                 if key != "__class__":
                     setattr(self, key, value)
 
+        else:
+            models.storage.new(self)
+
     def __str__(self):
         """Method to return a string containing public instance attributes
 
@@ -39,6 +43,7 @@ class BaseModel:
         """Method to save when the instance has been updated and save to json
         """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """ Save the Instance to dictionary
