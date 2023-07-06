@@ -10,9 +10,8 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
-from models import storage
+import models
 import shlex
-
 
 
 class HBNBCommand(cmd.Cmd):
@@ -56,7 +55,7 @@ class HBNBCommand(cmd.Cmd):
 
         li_arg = arg.split()
         try:
-            model = storage.all()[f"{li_arg[0]}.{li_arg[1]}"]
+            model = models.storage.all()[f"{li_arg[0]}.{li_arg[1]}"]
             print(model)
         except KeyError:
             print("** no instance found **")
@@ -79,11 +78,11 @@ class HBNBCommand(cmd.Cmd):
         elif len(li_arg) < 2:
             print("** instance id missing **")
         else:
-            objs = storage.all()
+            objs = models.storage.all()
             key = f'{li_arg[0]}.{li_arg[1]}'
             if key in objs:
                 del objs[key]
-                storage.save()
+                models.storage.save()
             else:
                 print("** no instance found **")
 
@@ -91,8 +90,8 @@ class HBNBCommand(cmd.Cmd):
         """Prints all string representation of all instances
         based or not on the class name\n"""
         if not arg:
-            for obj in storage.all():
-                print(storage.all()[obj].__str__())
+            for obj in models.storage.all():
+                print(models.storage.all()[obj].__str__())
             return
 
         try:
@@ -101,9 +100,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
 
-        for obj in storage.all():
+        for obj in models.storage.all():
             if obj.startswith(f"{cls_name}."):
-                print(storage.all()[obj].__str__())
+                print(models.storage.all()[obj].__str__())
 
     def do_update(self, arg):
         """Updates an instance based on the class name and if by
@@ -118,7 +117,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         try:
-            model = storage.all()[f"{li_arg[0]}.{li_arg[1]}"]
+            model = models.storage.all()[f"{li_arg[0]}.{li_arg[1]}"]
             if len(li_arg) < 3:
                 print("** attribute name missing **")
             elif len(li_arg) < 4:
