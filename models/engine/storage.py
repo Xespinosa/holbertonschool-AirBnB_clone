@@ -1,6 +1,6 @@
 #!/usr/bin/python
-from models.base_model import BaseModel
 import json
+from models.base_model import BaseModel
 
 """Module for File Storage management
 
