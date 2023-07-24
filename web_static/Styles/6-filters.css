@@ -1,0 +1,68 @@
+button {
+    font-size: 18px;
+    background-color: #ff5a5f;
+    color: #fff;
+    height: 75%;
+    width: 18%;
+    border-radius: 4px;
+    display: inline-block;
+    margin-left: 30%;
+    margin-top: 0.8%;
+    margin-right: 0%;
+    position: absolute;
+    border: none;
+}
+
+.States {
+    display: inline-block;
+    height: 100%;
+    width: 25%;
+    border-right: #ccc solid 1px;
+    text-align: center;
+}
+
+.Ammeneties {
+    display: inline-block;
+    height: 100%;
+    width: 25%;
+}
+
+.problem {
+    margin-left: 25%;
+    align-content: center;
+}
+
+.filters {
+    align-items: center;
+    position: relative;
+
+}
+
+.popover {
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    border: 1px solid #ccc;
+    width: 24.9%;
+}
+
+.States:hover .popover {
+    display: block;
+    position: absolute;
+}
+
+.dropdwnamn {
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    border: 1px solid #ccc;
+    width: 24.5%;
+    padding-left: 6%;
+}
+
+.Ammeneties:hover .dropdwnamn {
+    display: block;
+    position: absolute;
+}

@@ -1,0 +1,20 @@
+button {
+    font-size: 18px;
+    background-color: #ff5a5f;
+    color: #fff;
+    height: 75px;
+    width: 18%;
+    border-radius: 4px;
+    display: inline-block;
+    margin-left: 81%;
+    margin-top: 0.8%;
+    margin-right: 0%;
+    position: relative;
+    border: none;
+    margin-bottom: 0.8%;
+}
+
+.filters {
+    align-items: center;
+    height: 50%;
+}
